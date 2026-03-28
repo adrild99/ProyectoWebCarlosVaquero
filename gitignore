@@ -1,0 +1,13 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Node (por si en el futuro instalas algo)
+node_modules/
+
+# Variables de entorno (por si añades claves de API)
+.env
