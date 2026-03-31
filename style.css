@@ -344,72 +344,85 @@
  }
 
  /* ── RESPONSIVE ── */
- 
-/* Tablet y móvil (menos de 768px) */
-@media (max-width: 768px) {
- 
-    /* NAV: solo logo + botón, se ocultan los links */
-    nav {
-        justify-content: space-between;
-        padding: 0.7rem 1.2rem;
-        width: calc(100% - 2rem);
-    }
- 
-    nav ul {
-        display: none;
-    }
- 
-    /* HERO: título más pequeño */
-    #hero {
-        padding: 6rem 1.5rem;
-    }
- 
-    #hero h1 {
-        font-size: 2rem;
-    }
- 
-    /* VALORES: 1 columna */
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
- 
-    /* GALERÍA: 2 columnas en tablet */
-    .grid-fotos {
-        grid-template-columns: repeat(2, 1fr);
-    }
- 
-    /* FORMULARIO: 1 columna */
-    form {
-        grid-template-columns: 1fr;
-    }
- 
-    .full {
-        grid-column: 1;
-    }
- 
-    form button {
-        grid-column: 1;
-    }
- 
-    /* SECCIONES: menos padding lateral */
-    section {
-        padding: 3.5rem 1.2rem;
-    }
-}
- 
-/* Solo móvil (menos de 480px) */
-@media (max-width: 480px) {
- 
-    #hero h1 {
-        font-size: 1.7rem;
-    }
- 
-    /* GALERÍA: 1 columna en móvil pequeño */
-    .grid-fotos {
-        grid-template-columns: 1fr;
-    }
- 
-    h2 {
-        font-size: 1.8rem;
-    }
-}
+
+ /* Tablet y móvil (menos de 768px) */
+ @media (max-width: 768px) {
+
+     /* NAV: solo logo + botón, se ocultan los links */
+     nav {
+         justify-content: space-between;
+         padding: 0.7rem 1.2rem;
+         width: calc(100% - 2rem);
+     }
+
+     nav ul {
+         display: none;
+     }
+
+     /* HERO: título más pequeño */
+     #hero {
+         padding: 6rem 1.5rem;
+     }
+
+     #hero h1 {
+         font-size: 2rem;
+     }
+
+     /* VALORES: 1 columna */
+     .grid-3 {
+         grid-template-columns: 1fr;
+     }
+
+     /* GALERÍA: 2 columnas en tablet */
+     .grid-fotos {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     /* FORMULARIO: 1 columna */
+     form {
+         grid-template-columns: 1fr;
+     }
+
+     .full {
+         grid-column: 1;
+     }
+
+     form button {
+         grid-column: 1;
+     }
+
+     /* SECCIONES: menos padding lateral */
+     section {
+         padding: 3.5rem 1.2rem;
+     }
+ }
+
+ /* Solo móvil (menos de 480px) */
+ @media (max-width: 480px) {
+
+     #hero h1 {
+         font-size: 1.7rem;
+     }
+
+     /* GALERÍA: 1 columna en móvil pequeño */
+     .grid-fotos {
+         grid-template-columns: 1fr;
+     }
+
+     h2 {
+         font-size: 1.8rem;
+     }
+ }
+
+ /* FOTOS REALES EN GALERÍA */
+ .foto img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     transition: transform 0.4s ease;
+ }
+
+ .foto:hover img {
+     transform: scale(1.05);
+ }
