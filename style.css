@@ -257,25 +257,6 @@
      text-transform: uppercase;
  }
 
- /* Campo con etiqueta encima */
- .campo {
-     display: flex;
-     flex-direction: column;
-     gap: 0.3rem;
- }
-
- .campo label {
-     font-family: var(--font-ui);
-     font-size: 0.75rem;
-     color: var(--gris-calido);
-     font-weight: 500;
-     text-transform: uppercase;
-     letter-spacing: 0.06em;
- }
-
- .campo select {
-     cursor: pointer;
- }
 
  /* FAQ */
 .faq-item {
