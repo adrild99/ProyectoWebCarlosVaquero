@@ -34,7 +34,7 @@
      z-index: 1000;
      background: var(--noche);
      color: white;
-     padding: 0.8rem 2rem;
+     padding: 0.8rem 1.2rem;
      display: flex;
      justify-content: space-between;
      align-items: center;
@@ -42,15 +42,22 @@
      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
      width: max-content;
      max-width: 90vw;
-     gap: 2rem;
+     gap: 1rem;
  }
 
  nav .logo {
-     font-family: var(--font-titulo);
-     font-size: 1.2rem;
-     font-weight: 600;
-     color: var(--bronce);
-     letter-spacing: 0.02em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+ }
+
+ nav .logo img,
+ nav .logo svg {
+     height: 35px;
+     width: auto;
+     max-width: 100%;
+     object-fit: contain;
  }
 
  nav ul {
@@ -190,7 +197,7 @@
  /* VALORES */
  .grid-3 {
      display: grid;
-     grid-template-columns: repeat(3, 1fr);
+     grid-template-columns: repeat(2, 1fr);
      gap: 1.5rem;
      margin-top: 2rem;
  }
@@ -607,48 +614,57 @@
  }
 
  /* --- ESTILOS PASO 6 (Caja de texto) --- */
-.caja-respuesta {
-    border: 2px solid #1a1a1a; /* Borde oscuro y grueso */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 15px 20px;
-    background-color: #ffffff;
-    position: relative;
-}
+ .caja-respuesta {
+     border: 2px solid #1a1a1a;
+     /* Borde oscuro y grueso */
+     border-radius: 15px;
+     /* Bordes redondeados */
+     padding: 15px 20px;
+     background-color: #ffffff;
+     position: relative;
+ }
 
-.etiqueta-pequena {
-    display: block;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 8px;
-}
+ .etiqueta-pequena {
+     display: block;
+     font-size: 14px;
+     color: #333;
+     margin-bottom: 8px;
+ }
 
-.caja-respuesta input[type="text"] {
-    width: 100%;
-    border: none; /* Quitamos el borde por defecto del input */
-    outline: none; /* Quitamos el borde azul al hacer clic */
-    font-size: 18px; /* Texto un poco más grande */
-    color: #000;
-    background: transparent;
-}
+ .caja-respuesta input[type="text"] {
+     width: 100%;
+     border: none;
+     /* Quitamos el borde por defecto del input */
+     outline: none;
+     /* Quitamos el borde azul al hacer clic */
+     font-size: 18px;
+     /* Texto un poco más grande */
+     color: #000;
+     background: transparent;
+ }
 
-/* --- ESTILOS PASO 7 (Resumen) --- */
-.resumen-tarjeta {
-    border: 1px solid #dcdcdc; /* Borde gris clarito */
-    border-radius: 12px;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    background-color: #ffffff;
-}
+ /* --- ESTILOS PASO 7 (Resumen) --- */
+ .resumen-tarjeta {
+     border: 1px solid #dcdcdc;
+     /* Borde gris clarito */
+     border-radius: 12px;
+     padding: 12px 15px;
+     margin-bottom: 15px;
+     background-color: #ffffff;
+ }
 
-.resumen-etiqueta {
-    display: block;
-    font-size: 13px;
-    color: #777; /* Gris suave para la etiqueta */
-    margin-bottom: 4px;
-}
+ .resumen-etiqueta {
+     display: block;
+     font-size: 13px;
+     color: #777;
+     /* Gris suave para la etiqueta */
+     margin-bottom: 4px;
+ }
 
-.resumen-valor {
-    font-size: 16px;
-    color: #111; /* Casi negro para el texto */
-    min-height: 20px; /* Evita que la caja colapse si está vacía */
-}
+ .resumen-valor {
+     font-size: 16px;
+     color: #111;
+     /* Casi negro para el texto */
+     min-height: 20px;
+     /* Evita que la caja colapse si está vacía */
+ }
