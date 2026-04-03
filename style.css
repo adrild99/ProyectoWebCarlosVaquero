@@ -489,7 +489,6 @@
  .footer-linea {
      display: flex;
      flex-wrap: wrap;
-     /* Si no caben, bajan a la siguiente línea enteros */
      justify-content: center;
      align-items: center;
      gap: 0.4rem;
@@ -503,6 +502,16 @@
      margin-top: 1rem;
      font-size: 0.72rem;
      opacity: 0.5;
+ }
+
+ .link-correo {
+     color: var(--bronce);
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ .link-correo:hover {
+     color: #ecd9b9;
  }
 
  .progress-bar {
