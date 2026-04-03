@@ -1,7 +1,7 @@
  /* ── VARIABLES DE MARCA XYLOS HOME ── */
  :root {
      --noche: #0E1117;
-     --bronce: #C49240;
+     --bronce: #c49240;
      --bronce-osc: #8B6520;
      --crema: #F7F3ED;
      --arena: #E8DCC8;
@@ -139,13 +139,12 @@
  }
 
  #hero p {
-     font-size: 1rem;
-     margin-bottom: 2.5rem;
-     font-weight: bold;
-     color: black;
-     font-family: var(--font-ui);
-     letter-spacing: 0.03em;
-
+     color: #ebbb6f;
+     font-size: 1.1rem;
+     line-height: 1.6;
+     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+     max-width: 800px;
+     margin: 1rem auto;
  }
 
  #hero a {
@@ -318,7 +317,7 @@
          width: calc(100% - 2rem);
      }
 
-    nav ul {
+     nav ul {
          display: none;
          flex-wrap: wrap;
          gap: 1.5rem;
