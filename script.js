@@ -268,3 +268,31 @@ function validarPaso(paso) {
     // Aquí iremos añadiendo la validación del paso 3, 4, 5...
     return true;
 }
+
+// --- ACORDEÓN DE PREGUNTAS FRECUENTES ---
+document.addEventListener("DOMContentLoaded", function() {
+    // Buscamos todas las cajas de preguntas
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const titulo = item.querySelector('h3'); // Tu pregunta
+        const respuesta = item.querySelector('p'); // Tu respuesta
+
+        titulo.addEventListener('click', () => {
+            const estaAbierto = item.classList.contains('abierto');
+
+            // 1. Cerramos absolutamente todas las preguntas primero
+            faqItems.forEach(otroItem => {
+                otroItem.classList.remove('abierto');
+                otroItem.querySelector('p').style.maxHeight = null;
+            });
+
+            // 2. Si la que hemos pinchado NO estaba abierta, la abrimos
+            if (!estaAbierto) {
+                item.classList.add('abierto');
+                // scrollHeight calcula exactamente lo que mide el texto para que baje justo lo necesario
+                respuesta.style.maxHeight = respuesta.scrollHeight + "px"; 
+            }
+        });
+    });
+});
