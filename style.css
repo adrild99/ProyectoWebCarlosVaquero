@@ -243,69 +243,119 @@
      margin-top: 2rem;
  }
 
+ /* Modificamos ligeramente .foto para preparar el efecto */
  .foto {
      background: var(--arena);
      height: 250px;
      border-radius: 10px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     color: var(--gris-calido);
-     font-family: var(--font-ui);
-     font-size: 0.75rem;
-     letter-spacing: 0.08em;
-     text-transform: uppercase;
+     position: relative;
+     /* VITAL para poder colocar el texto dentro */
+     overflow: hidden;
+     /* VITAL para ocultar el texto que empujamos hacia abajo */
+     cursor: pointer;
  }
 
+ /* Aseguramos que la imagen cubra toda la caja y preparamos el zoom */
+ .foto img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     /* Evita que la foto se deforme */
+     transition: transform 0.5s ease;
+ }
+
+ /* La caja oculta con el título y descripción */
+ .foto-info {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     /* Fondo oscuro semi-transparente para leer bien las letras */
+     background: rgba(14, 17, 23, 0.9);
+     padding: 1.5rem;
+     text-align: left;
+
+     /* MAGIA: Empujamos la caja hacia abajo el 100% de su tamaño para esconderla */
+     transform: translateY(100%);
+     transition: transform 0.4s ease-in-out;
+ }
+
+ .foto-info h4 {
+     color: var(--bronce);
+     font-family: var(--font-titulo);
+     font-size: 1.2rem;
+     margin-bottom: 0.3rem;
+     font-weight: 500;
+ }
+
+ .foto-info p {
+     color: var(--crema);
+     font-family: var(--font-ui);
+     font-size: 0.85rem;
+     line-height: 1.4;
+     margin: 0;
+     opacity: 0.9;
+ }
+
+ /* --- ANIMACIONES AL PASAR EL RATÓN (HOVER) --- */
+ .foto:hover img {
+     transform: scale(1.08);
+     /* La foto hace un zoom elegante */
+ }
+
+ .foto:hover .foto-info {
+     transform: translateY(0);
+     /* La caja de texto sube a su sitio */
+ }
 
  /* FAQ */
-.faq-item {
-    border-bottom: 1px solid var(--arena);
-    padding: 1.2rem 0;
-}
+ .faq-item {
+     border-bottom: 1px solid var(--arena);
+     padding: 1.2rem 0;
+ }
 
-.faq-item h3 {
-    font-family: var(--font-ui);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--noche);
-    margin-bottom: 0; 
-    
-    /* --- NUEVO: Convertimos el h3 en un botón clickeable --- */
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none; 
-}
+ .faq-item h3 {
+     font-family: var(--font-ui);
+     font-size: 0.95rem;
+     font-weight: 500;
+     color: var(--noche);
+     margin-bottom: 0;
 
-.faq-item h3::after {
-    content: '+';
-    color: var(--bronce); 
-    font-size: 1.5rem;
-    font-weight: 300;
-    transition: transform 0.3s ease;
-}
+     /* --- NUEVO: Convertimos el h3 en un botón clickeable --- */
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     user-select: none;
+ }
 
-.faq-item.abierto h3::after {
-    transform: rotate(45deg);
-}
+ .faq-item h3::after {
+     content: '+';
+     color: var(--bronce);
+     font-size: 1.5rem;
+     font-weight: 300;
+     transition: transform 0.3s ease;
+ }
 
-/* --- NUEVO: Animación y ocultación del párrafo --- */
-.faq-item p {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    transition: max-height 0.4s ease, margin 0.4s ease, opacity 0.4s ease;
-}
+ .faq-item.abierto h3::after {
+     transform: rotate(45deg);
+ }
 
-/* Al abrirse, el párrafo recupera la opacidad y su margen superior */
-.faq-item.abierto p {
-    opacity: 1;
-    margin-top: 0.8rem; 
-}
+ /* --- NUEVO: Animación y ocultación del párrafo --- */
+ .faq-item p {
+     max-height: 0;
+     overflow: hidden;
+     opacity: 0;
+     margin-top: 0;
+     margin-bottom: 0;
+     transition: max-height 0.4s ease, margin 0.4s ease, opacity 0.4s ease;
+ }
+
+ /* Al abrirse, el párrafo recupera la opacidad y su margen superior */
+ .faq-item.abierto p {
+     opacity: 1;
+     margin-top: 0.8rem;
+ }
 
  /* FOOTER */
  footer {
@@ -364,7 +414,12 @@
 
      /* GALERÍA: 2 columnas en tablet */
      .grid-fotos {
-         grid-template-columns: repeat(2, 1fr);
+         grid-template-columns: 1fr;
+     }
+
+     .foto-info {
+         transform: translateY(0);
+         background: linear-gradient(to top, rgba(14, 17, 23, 0.9) 50%, transparent);
      }
 
      /* FORMULARIO: 1 columna */
