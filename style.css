@@ -661,3 +661,50 @@
      border-color: black;
      background-color: #f9f9f9;
  }
+
+ /* --- ESTILOS PASO 5 (Caja de texto) --- */
+.caja-respuesta {
+    border: 2px solid #1a1a1a; /* Borde oscuro y grueso */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 15px 20px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.etiqueta-pequena {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.caja-respuesta input[type="text"] {
+    width: 100%;
+    border: none; /* Quitamos el borde por defecto del input */
+    outline: none; /* Quitamos el borde azul al hacer clic */
+    font-size: 18px; /* Texto un poco más grande */
+    color: #000;
+    background: transparent;
+}
+
+/* --- ESTILOS PASO 7 (Resumen) --- */
+.resumen-tarjeta {
+    border: 1px solid #dcdcdc; /* Borde gris clarito */
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+}
+
+.resumen-etiqueta {
+    display: block;
+    font-size: 13px;
+    color: #777; /* Gris suave para la etiqueta */
+    margin-bottom: 4px;
+}
+
+.resumen-valor {
+    font-size: 16px;
+    color: #111; /* Casi negro para el texto */
+    min-height: 20px; /* Evita que la caja colapse si está vacía */
+}

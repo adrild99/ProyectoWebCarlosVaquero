@@ -3,7 +3,7 @@
 // Iremos añadiendo pasos aquí uno a uno.
 
 let pasoActual = 1;
-const totalPasos = 6;
+const totalPasos = 7;
 
 // Inicializamos la UI al cargar la página
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // Avanzar al siguiente paso
 function pasoPosterior() {
     if (!validarPaso(pasoActual)) return;
+
+
+    if (pasoActual === 6) {
+        document.getElementById('resumen-nombre').textContent = document.getElementById('nombre').value;
+        document.getElementById('resumen-apellidos').textContent = document.getElementById('apellidos').value;
+        document.getElementById('resumen-email').textContent = document.getElementById('email').value;
+        document.getElementById('resumen-telefono').textContent = document.getElementById('telefono').value;
+    }
 
     // Ocultamos el paso actual
     document.getElementById('paso' + pasoActual).classList.remove('activo');
@@ -158,6 +166,39 @@ function validarPaso(paso) {
             return false;
         } else {
             opcionesTiempo[0].setCustomValidity('');
+        }
+    }
+    // --- VALIDACIÓN DEL PASO 5 (Horario) ---
+    if (paso === 5) {
+        var opcionesHorario = document.getElementsByName('horario_llamada');
+        var seleccionado = false;
+
+        for (var i = 0; i < opcionesHorario.length; i++) {
+            if (opcionesHorario[i].checked) {
+                seleccionado = true;
+                break;
+            }
+        }
+
+        if (!seleccionado) {
+            opcionesHorario[0].setCustomValidity('Por favor, dinos a qué hora prefieres que te llamemos.');
+            opcionesHorario[0].reportValidity();
+            return false;
+        } else {
+            opcionesHorario[0].setCustomValidity('');
+        }
+    }
+
+    // --- VALIDACIÓN DEL PASO 6 (Ciudad) ---
+    if (paso === 6) {
+        var ciudad = document.getElementById('ciudad');
+
+        ciudad.setCustomValidity('');
+
+        if (!ciudad.value.trim()) {
+            ciudad.setCustomValidity('Por favor, indícanos en qué ciudad quieres construir.');
+            ciudad.reportValidity();
+            return false;
         }
     }
 

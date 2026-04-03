@@ -204,6 +204,73 @@
         </div>
       </div>
 
+      <!-- PASO 5: Horarios de llamada -->
+
+      <div class="paso" id="paso5">
+
+        <h3 class="paso-titulo centrado">¿Cuándo prefieres que te llamemos?</h3>
+
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">8 a 12h</span>
+            <input type="radio" name="horario_llamada" value="Mañana (8-12h)" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">12 a 16h</span>
+            <input type="radio" name="horario_llamada" value="Mediodia (12-16h)" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">16 a 21h</span>
+            <input type="radio" name="horario_llamada" value="Tarde (16-21h)" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- PASO 6: Ciudad del proyecto-->
+
+
+      <div class="paso" id="paso6">
+        <h3 class="paso-titulo centrado">¿En qué ciudad quieres construir?</h3>
+
+        <div class="caja-respuesta">
+          <label for="ciudad" class="etiqueta-pequena">Tu respuesta</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Toledo" required>
+        </div>
+      </div>
+
+      <!-- PASO 7: Resumen del proyecto-->
+
+      <div class="paso" id="paso7">
+        <h3 class="paso-titulo">Información de contacto ⓘ</h3>
+        <p class="paso-subtitulo">Esta información será usada para contactarte</p>
+
+        <div class="campos-grupo">
+          <div class="resumen-tarjeta">
+            <span class="resumen-etiqueta">Nombre</span>
+            <div class="resumen-valor" id="resumen-nombre">-</div>
+          </div>
+
+          <div class="resumen-tarjeta">
+            <span class="resumen-etiqueta">Apellidos</span>
+            <div class="resumen-valor" id="resumen-apellidos">-</div>
+          </div>
+
+          <div class="resumen-tarjeta">
+            <span class="resumen-etiqueta">Correo electrónico</span>
+            <div class="resumen-valor" id="resumen-email">-</div>
+          </div>
+
+          <div class="resumen-tarjeta">
+            <span class="resumen-etiqueta">Número de teléfono</span>
+            <div class="resumen-valor" id="resumen-telefono">-</div>
+          </div>
+        </div>
+      </div>
 
       <!-- BOTONES -->
       <div class="wizard-botones" id="wizardBotones">
@@ -213,6 +280,7 @@
 
     </div>
   </section>
+
 
   <hr>
 
