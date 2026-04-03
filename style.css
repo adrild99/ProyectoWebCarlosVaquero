@@ -504,13 +504,13 @@
      opacity: 0.5;
  }
 
- .link-correo {
+ .link-contacto {
      color: var(--bronce);
      text-decoration: none;
      transition: color 0.3s ease;
  }
 
- .link-correo:hover {
+ .link-contacto:hover {
      color: #ecd9b9;
  }
 
