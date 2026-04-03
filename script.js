@@ -14,12 +14,52 @@ document.addEventListener("DOMContentLoaded", function () {
 function pasoPosterior() {
     if (!validarPaso(pasoActual)) return;
 
+    //  Si estamos en el último paso enviamos los datos en segundo plano ---
     if (pasoActual === totalPasos) {
-        // En un caso real, esto envía los datos a la URL del "action" del form
-        document.getElementById('formularioProyecto').submit();
-        return; // Detenemos el código aquí
-    }
+        var form = document.getElementById('formularioProyecto');
+        var botonContinuar = document.getElementById('btnContinuar');
+        var botonAtras = document.getElementById('btnAtras');
 
+        // 1. Cambiamos el botón para que el cliente vea que está cargando
+        botonContinuar.textContent = 'Enviando...';
+        botonContinuar.disabled = true; // Desactivamos el botón para que no haga doble clic
+        botonAtras.style.visibility = 'hidden'; // Ocultamos el botón de atrás
+
+        // 2. Recogemos todos los datos del formulario
+        var datos = new FormData(form);
+
+        // 3. Enviamos los datos a Formspree de forma invisible
+        fetch(form.action, {
+            method: form.method,
+            body: datos,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // ÉXITO: Ocultamos todo el contenido del formulario y mostramos el mensaje de Gracias
+                form.innerHTML = `
+                    <div style="text-align: center; padding: 50px 20px;">
+                        <h2 style="margin-bottom: 15px;">¡Mensaje enviado con éxito!</h2>
+                        <p style="font-size: 18px; color: #555;">Gracias por contarnos sobre tu proyecto. El equipo de Xylos Home lo revisará y te llamaremos en el horario que has elegido.</p>
+                    </div>
+                `;
+            } else {
+                // SI ALGO FALLA (ej. Formspree pide captcha)
+                alert("Hubo un problema al enviar. Por favor, inténtalo de nuevo.");
+                botonContinuar.textContent = 'Enviar';
+                botonContinuar.disabled = false;
+                botonAtras.style.visibility = 'visible';
+            }
+        }).catch(error => {
+            alert("Error de conexión. Comprueba tu internet.");
+            botonContinuar.textContent = 'Enviar';
+            botonContinuar.disabled = false;
+            botonAtras.style.visibility = 'visible';
+        });
+
+        return; // Detenemos la ejecución aquí
+    }
     if (pasoActual === 6) {
         document.getElementById('resumen-nombre').textContent = document.getElementById('nombre').value;
         document.getElementById('resumen-apellidos').textContent = document.getElementById('apellidos').value;
@@ -100,7 +140,7 @@ function validarPaso(paso) {
             telefono.reportValidity();
             return false;
         } else if (!regexTelefono.test(telValor)) {
-            telefono.setCustomValidity('El teléfono debe contener exactamente 9 números.');
+            telefono.setCustomValidity('El teléfono debe contener exactamente 9 dígitos.');
             telefono.reportValidity();
             return false;
         }
