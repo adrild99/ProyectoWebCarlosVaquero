@@ -319,7 +319,12 @@
      }
 
      nav ul {
-         display: none;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1.5rem;
+         justify-content: center;
+         max-height: 1.2rem;
+         overflow: hidden;
      }
 
      /* HERO: título más pequeño */
@@ -375,6 +380,15 @@
      h2 {
          font-size: 1.8rem;
      }
+
+     .footer-linea {
+         flex-direction: column;
+         gap: 0.3rem;
+     }
+
+     .punto-separador {
+         display: none;
+     }
  }
 
  /* FOTOS REALES EN GALERÍA */
@@ -394,6 +408,25 @@
  .form-wizard {
      max-width: 560px;
      margin: 2rem auto 0;
+ }
+
+ .footer-linea {
+     display: flex;
+     flex-wrap: wrap;
+     /* Si no caben, bajan a la siguiente línea enteros */
+     justify-content: center;
+     align-items: center;
+     gap: 0.4rem;
+ }
+
+ .footer-linea.contacto {
+     margin-top: 0.5rem;
+ }
+
+ .footer-legal {
+     margin-top: 1rem;
+     font-size: 0.72rem;
+     opacity: 0.5;
  }
 
  .progress-bar {
