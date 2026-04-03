@@ -1,7 +1,26 @@
-// ── FORMULARIO MULTI-PASO ──────────────────────────────
-// Por ahora solo tenemos el paso 1.
-// Iremos añadiendo pasos aquí uno a uno.
+// CARRUSEL HERO (INICIO)
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.slide-fondo');
+    let slideActual = 0;
 
+    // Solo funciona si encuentra las imágenes
+    if (slides.length > 0) {
+        setInterval(() => {
+            // Apaga la foto actual
+            slides[slideActual].classList.remove('activa');
+            
+            // Calcula cuál es la siguiente foto
+            slideActual = (slideActual + 1) % slides.length;
+            
+            // Enciende la siguiente foto
+            slides[slideActual].classList.add('activa');
+        }, 5000); // 5000 = Cambia de foto cada 5 segundos
+    }
+});
+
+
+
+// ── FORMULARIO MULTI-PASO ──────────────────────────────
 let pasoActual = 1;
 const totalPasos = 7;
 
@@ -106,7 +125,6 @@ function actualizarUI() {
     document.getElementById('btnContinuar').textContent = pasoActual === totalPasos ? 'Enviar' : 'Continuar';
 }
 
-// Validación del paso actual antes de avanzar
 // Validación del paso actual antes de avanzar
 function validarPaso(paso) {
 

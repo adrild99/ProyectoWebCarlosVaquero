@@ -24,7 +24,7 @@
      color: var(--noche);
      background: #fff;
      text-align: justify;
-    }
+ }
 
  /* NAV */
  nav {
@@ -114,15 +114,12 @@
  /* HERO */
  #hero {
      max-width: 100%;
-     background: linear-gradient(rgba(190, 186, 158, 0.6), rgba(6, 6, 6, 0.6)), url('img/renderHero.jpeg');
-
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
-
+     position: relative;
+     overflow: hidden;
      color: white;
      text-align: center;
      padding: 12rem 2rem;
+     /* Si lo ves muy grande, baja este 12rem a 6rem u 8rem */
      min-height: 80vh;
      display: flex;
      flex-direction: column;
@@ -159,11 +156,19 @@
      font-size: 0.85rem;
      letter-spacing: 0.06em;
      text-transform: uppercase;
+     margin-top: 1rem;
  }
 
  #hero a:hover {
      background: var(--bronce-osc);
      color: white;
+ }
+
+ #hero h1,
+ #hero p,
+ #hero a {
+     position: relative;
+     z-index: 10;
  }
 
  h2 {
@@ -700,4 +705,44 @@
      /* Casi negro para el texto */
      min-height: 20px;
      /* Evita que la caja colapse si está vacía */
+ }
+
+ /* --- LAS CAPAS DEL CARRUSEL (NUEVO) --- */
+
+ .fondo-carrusel {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 1;
+     /* Se queda al fondo del todo */
+ }
+
+ .slide-fondo {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     background-position: center;
+     opacity: 0;
+     transition: opacity 1.5s ease-in-out;
+ }
+
+ .slide-fondo.activa {
+     opacity: 1;
+ }
+
+ /* TU GRADIENTE ORIGINAL (Lo pasamos a esta capa para que afecte a todas las fotos) */
+ .capa-oscura {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(rgba(190, 186, 158, 0.6), rgba(6, 6, 6, 0.6));
+     z-index: 2;
+     /* Por encima de las fotos, por debajo del texto */
  }
