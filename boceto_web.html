@@ -81,7 +81,7 @@
       <div class="foto"><img src="img/construccion3.jpeg" alt="Proyecto Xylos Home"></div>
       <div class="foto"><img src="img/render2.jpeg" alt="Proyecto Xylos Home"></div>
       <div class="foto"><img src="img/construccion4.jpeg" alt="Proyecto Xylos Home"></div>
-      <div class="foto"><img src="img/renderHero.jpeg"Proyecto Xylos Home"></div>
+      <div class="foto"><img src="img/renderHero.jpeg" Proyecto Xylos Home"></div>
       <div class="foto"><img src="img/construccion1.jpeg" alt="Proyecto Xylos Home"></div>
     </div>
   </section>
@@ -91,40 +91,127 @@
   <!-- CONTACTO -->
   <section id="contacto">
     <h2>Hablemos de tu proyecto</h2>
-    <p>Rellena el formulario y nos ponemos en contacto contigo.</p>
-    <form>
-      <input type="text" placeholder="Nombre" />
-      <input type="email" placeholder="Email" />
-      <input type="tel" placeholder="Teléfono" />
-      <div></div>
+    <p>Cuéntanos sobre ti y tu proyecto. Te llamamos cuando prefieras.</p>
 
-      <div class="campo">
-        <label>¿Tienes terreno?</label>
-        <select>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
+    <div class="form-wizard">
+
+      <!-- BARRA DE PROGRESO -->
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-label" id="progressLabel">Paso 1 de 6</p>
+
+      <!-- PASO 1: Datos de contacto -->
+      <div class="paso activo" id="paso1">
+        <h3 class="paso-titulo">Información de contacto</h3>
+        <p class="paso-subtitulo">Esta información será usada para contactarte</p>
+        <div class="campos-grupo">
+          <input type="text" id="nombre" placeholder="Nombre" />
+          <input type="text" id="apellidos" placeholder="Apellidos" />
+          <input type="email" id="email" placeholder="Correo electrónico" required />
+          <input type="tel" id="telefono" placeholder="Número de teléfono" pattern="/^\+?[0-9]{9,15}$/" required />
+        </div>
       </div>
 
-      <div class="campo">
-        <label>¿Tienes presupuesto definido?</label>
-        <select>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
+      <!-- PASO 2: Proyecto hecho o no -->
+
+      <div class="paso" id="paso2">
+        <h3 class="paso-titulo centrado">¿Tienes ya proyecto hecho?</h3>
+
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Si</span>
+            <input type="radio" name="estado_proyecto" value="Si" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Aún No</span>
+            <input type="radio" name="estado_proyecto" value="Aun No" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
       </div>
 
-      <div class="campo full">
-        <label>¿En qué plazo lo necesitas?</label>
-        <select>
-          <option value="corto">Corto plazo</option>
-          <option value="medio">Medio plazo</option>
-          <option value="largo">Largo plazo</option>
-        </select>
+      <!-- PASO 3: Presupuesto -->
+      <div class="paso" id="paso3">
+
+        <h3 class="paso-titulo centrado">¿Cuánto presupuesto aproximado tienes?</h3>
+
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Menos de 200.000€</span>
+            <input type="radio" name="presupuesto" value="Menos de 200k" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">de 200.000 a 400.000€</span>
+            <input type="radio" name="presupuesto" value="200k - 400k" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">400.000 a 1 Millón de €</span>
+            <input type="radio" name="presupuesto" value="400k - 1M" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">1 a 2 millones de €</span>
+            <input type="radio" name="presupuesto" value="1M - 2M" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Más de 2M€</span>
+            <input type="radio" name="presupuesto" value="Mas de 2M" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
       </div>
-      <textarea class="full" placeholder="Cuéntanos tu proyecto..."></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
+
+      <!-- PASO 4: Tiempos pautados -->
+
+      <div class="paso" id="paso4">
+
+        <h3 class="paso-titulo centrado">¿Cuándo planeas empezar a construir?</h3>
+
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Quiero empezar ya</span>
+            <input type="radio" name="tiempo_inicio" value="Quiero empezar" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">De 1 a 6 meses</span>
+            <input type="radio" name="tiempo_inicio" value="1 a 6 meses" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">De 7 a 12 Meses</span>
+            <input type="radio" name="tiempo_inicio" value="7 a 12 meses" required>
+            <span class="radio-personalizado"></span>
+          </label>
+
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Más de 1 año</span>
+            <input type="radio" name="tiempo_inicio" value="Mas de 1 año" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
+      </div>
+
+
+      <!-- BOTONES -->
+      <div class="wizard-botones" id="wizardBotones">
+        <button type="button" class="btn-atras" id="btnAtras" onclick="pasoAnterior()">Atrás</button>
+        <button type="button" class="btn-continuar" id="btnContinuar" onclick="pasoPosterior()">Continuar</button>
+      </div>
+
+    </div>
   </section>
 
   <hr>
@@ -161,6 +248,8 @@
     <p style="margin-top:0.5rem;">contacto@xylos.es · +34 600 000 000 · Valencia, España</p>
     <p style="margin-top:1rem; font-size:0.72rem; opacity:0.5;">© 2026 Xylos Home · Todos los derechos reservados</p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 
