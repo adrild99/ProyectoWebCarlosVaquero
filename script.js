@@ -1,5 +1,5 @@
 // CARRUSEL HERO (INICIO)
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.slide-fondo');
     let slideActual = 0;
 
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
         setInterval(() => {
             // Apaga la foto actual
             slides[slideActual].classList.remove('activa');
-            
+
             // Calcula cuál es la siguiente foto
             slideActual = (slideActual + 1) % slides.length;
-            
+
             // Enciende la siguiente foto
             slides[slideActual].classList.add('activa');
         }, 5000); // 5000 = Cambia de foto cada 5 segundos
@@ -270,7 +270,7 @@ function validarPaso(paso) {
 }
 
 // --- ACORDEÓN DE PREGUNTAS FRECUENTES ---
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Buscamos todas las cajas de preguntas
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -291,8 +291,25 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!estaAbierto) {
                 item.classList.add('abierto');
                 // scrollHeight calcula exactamente lo que mide el texto para que baje justo lo necesario
-                respuesta.style.maxHeight = respuesta.scrollHeight + "px"; 
+                respuesta.style.maxHeight = respuesta.scrollHeight + "px";
             }
         });
+    });
+});
+
+// --- LÓGICA DE COOKIES ---
+document.addEventListener("DOMContentLoaded", function () {
+    const bannerCookies = document.getElementById('banner-cookies');
+    const btnAceptar = document.getElementById('btn-aceptar-cookies');
+
+    // Si no existe la cookie guardada en el navegador del usuario, mostramos el banner
+    if (!localStorage.getItem('cookiesAceptadas')) {
+        bannerCookies.classList.remove('oculto');
+    }
+
+    // Al hacer clic en aceptar, guardamos la variable y escondemos el banner
+    btnAceptar.addEventListener('click', () => {
+        localStorage.setItem('cookiesAceptadas', 'true');
+        bannerCookies.classList.add('oculto');
     });
 });
