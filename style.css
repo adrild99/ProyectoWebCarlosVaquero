@@ -309,7 +309,7 @@
  /* ── RESPONSIVE ── */
 
  /* Tablet y móvil (menos de 768px) */
- @media (max-width: 768px) {
+ @media (max-width: 616px) {
 
      /* NAV: solo logo + botón, se ocultan los links */
      nav {
@@ -318,10 +318,9 @@
          width: calc(100% - 2rem);
      }
 
-     nav ul {
-         display: flex;
+    nav ul {
+         display: none;
          flex-wrap: wrap;
-         white-space: nowrap;
          gap: 1.5rem;
          justify-content: center;
          max-height: 1.2rem;
