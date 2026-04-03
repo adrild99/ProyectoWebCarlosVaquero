@@ -92,8 +92,7 @@
   <section id="contacto">
     <h2>Hablemos de tu proyecto</h2>
     <p>Cuéntanos sobre ti y tu proyecto. Te llamamos cuando prefieras.</p>
-
-    <div class="form-wizard">
+    <form class="form-wizard" id="formularioProyecto" action="" method="POST">
 
       <!-- BARRA DE PROGRESO -->
       <div class="progress-bar">
@@ -106,10 +105,11 @@
         <h3 class="paso-titulo">Información de contacto</h3>
         <p class="paso-subtitulo">Esta información será usada para contactarte</p>
         <div class="campos-grupo">
-          <input type="text" id="nombre" placeholder="Nombre" />
-          <input type="text" id="apellidos" placeholder="Apellidos" />
-          <input type="email" id="email" placeholder="Correo electrónico" required />
-          <input type="tel" id="telefono" placeholder="Número de teléfono" pattern="/^\+?[0-9]{9,15}$/" required />
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" />
+          <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" />
+          <input type="email" id="email" name="email" placeholder="Correo electrónico" required />
+          <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" pattern="/^\+?[0-9]{9,15}$/"
+            required />
         </div>
       </div>
 
@@ -277,8 +277,7 @@
         <button type="button" class="btn-atras" id="btnAtras" onclick="pasoAnterior()">Atrás</button>
         <button type="button" class="btn-continuar" id="btnContinuar" onclick="pasoPosterior()">Continuar</button>
       </div>
-
-    </div>
+    </form>
   </section>
 
 

@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function pasoPosterior() {
     if (!validarPaso(pasoActual)) return;
 
+    if (pasoActual === totalPasos) {
+        // En un caso real, esto envía los datos a la URL del "action" del form
+        document.getElementById('formularioProyecto').submit();
+        return; // Detenemos el código aquí
+    }
 
     if (pasoActual === 6) {
         document.getElementById('resumen-nombre').textContent = document.getElementById('nombre').value;

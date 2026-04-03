@@ -245,62 +245,6 @@
      text-transform: uppercase;
  }
 
- /* FORMULARIO */
- form {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 1rem;
-     margin-top: 2rem;
- }
-
- form input,
- form textarea,
- form select {
-     padding: 0.75rem;
-     border: 1px solid var(--arena);
-     border-radius: 4px;
-     font-size: 0.95rem;
-     font-family: var(--font-cuerpo);
-     width: 100%;
-     background: white;
-     color: var(--noche);
- }
-
- form input:focus,
- form textarea:focus,
- form select:focus {
-     outline: none;
-     border-color: var(--bronce);
- }
-
- form textarea {
-     height: 120px;
- }
-
- .full {
-     grid-column: 1 / 3;
- }
-
- form button {
-     grid-column: 1 / 3;
-     background: var(--noche);
-     color: white;
-     border: none;
-     padding: 0.9rem;
-     border-radius: 4px;
-     font-family: var(--font-ui);
-     font-size: 0.85rem;
-     font-weight: 600;
-     letter-spacing: 0.06em;
-     text-transform: uppercase;
-     cursor: pointer;
- }
-
- form button:hover {
-     background: var(--bronce);
-     color: var(--noche);
- }
-
  /* Campo con etiqueta encima */
  .campo {
      display: flex;
@@ -662,7 +606,7 @@
      background-color: #f9f9f9;
  }
 
- /* --- ESTILOS PASO 5 (Caja de texto) --- */
+ /* --- ESTILOS PASO 6 (Caja de texto) --- */
 .caja-respuesta {
     border: 2px solid #1a1a1a; /* Borde oscuro y grueso */
     border-radius: 15px; /* Bordes redondeados */
