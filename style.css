@@ -23,7 +23,8 @@
      font-family: var(--font-cuerpo);
      color: var(--noche);
      background: #fff;
- }
+     text-align: justify;
+    }
 
  /* NAV */
  nav {
