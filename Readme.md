@@ -35,7 +35,7 @@ ProyectoCarlos/
 
 - **HTML5** — estructura de la página
 - **CSS3** — estilos y layout (Grid, Flexbox)
-- **JavaScript** — pendiente de añadir para el acordeón del FAQ y validación del formulario
+- **JavaScript** — utilizado para validación de formulario, acordeon FaQ y carrusel Hero.
 - **Formspree** — envío del formulario por email (pendiente de integrar)
 
 Todo funciona abriendo `index.html` directamente en el navegador. No necesita servidor ni instalación.
@@ -44,23 +44,7 @@ Todo funciona abriendo `index.html` directamente en el navegador. No necesita se
 
 ## Pendiente
 
-- [ ] Sustituir textos de ejemplo por los textos reales de Carlos
-- [ ] Añadir fotos reales en la galería
-- [ ] Actualizar nombre, email y teléfono en el footer
-- [ ] Integrar Formspree para que el formulario envíe emails
-- [ ] Añadir acordeón en el FAQ con JavaScript
-- [ ] Adaptar las preguntas del formulario al negocio de Carlos
-- [ ] Revisar diseño en móvil (responsive)
-- [ ] Configurar dominio y subir a Netlify
-
----
-
-## Cómo publicar la web (cuando esté lista)
-
-1. Entrar en [netlify.com](https://netlify.com) y crear una cuenta gratuita
-2. Arrastrar la carpeta del proyecto al panel de Netlify
-3. La web queda publicada con una URL pública automáticamente
-4. Conectar el dominio de Carlos desde el panel de Netlify
+- [ ] Configurar dominio 
 
 ---
 
