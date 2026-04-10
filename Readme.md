@@ -10,11 +10,14 @@ Landing page profesional desarrollada en HTML, CSS y JavaScript puro. Sin framew
 
 ```
 ProyectoCarlos/
-├── index.html       # Estructura principal
-├── style.css        # Estilos (Grid, Flexbox, Animaciones)
-├── script.js       # Interactividad (Carrusel, FAQ, Hover)
-├── img/             # Renders y fotos de proyectos
-└── logos/           # Identidad visual (SVG/PNG)
+├── index.html                # Estructura principal
+├── aviso-legal.html          # Documento legal
+├── política-cookies.html     # Documento legal
+├── politica-privacidad.html  # Documento legal
+├── style.css                 # Estilos (Grid, Flexbox, Animaciones)
+├── script.js                 # Interactividad (Carrusel, FAQ, Hover)
+├── img/                      # Renders y fotos de proyectos
+└── logos/                    # Identidad visual (SVG/PNG)
 ```
 
 ---
