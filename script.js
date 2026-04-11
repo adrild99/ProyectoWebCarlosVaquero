@@ -46,7 +46,7 @@ function pasoPosterior() {
                 { name: 'presupuesto', value: document.querySelector('input[name="presupuesto"]:checked')?.value || '' },
                 { name: 'tiempo_inicio', value: document.querySelector('input[name="tiempo_inicio"]:checked')?.value || '' },
                 { name: 'horario_llamada', value: document.querySelector('input[name="horario_llamada"]:checked')?.value || '' },
-                { name: 'city', value: document.getElementById('city').value },
+                { name: 'city', value: document.getElementById('ciudad').value },
             ],
             context: {
                 pageUri: window.location.href,
