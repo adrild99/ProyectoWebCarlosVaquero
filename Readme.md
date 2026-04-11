@@ -1,6 +1,6 @@
 # Proyecto Web — Carlos
 
-[Ver web en vivo](https://xyloshome.vercel.app)
+[Ver web en vivo](https://xyloshome.pages.dev)
 
 Landing page profesional desarrollada en HTML, CSS y JavaScript puro. Sin frameworks ni dependencias externas.
 
@@ -9,16 +9,18 @@ Landing page profesional desarrollada en HTML, CSS y JavaScript puro. Sin framew
 ## Estructura del proyecto
 
 ```
-ProyectoCarlos/
-├── index.html                # Estructura principal
-├── aviso-legal.html          # Documento legal
-├── política-cookies.html     # Documento legal
-├── politica-privacidad.html  # Documento legal
-├── style.css                 # Estilos (Grid, Flexbox, Animaciones)
-├── script.js                 # Interactividad (Carrusel, FAQ, Hover)
-├── img/                      # Renders y fotos de proyectos
-└── logos/                    # Identidad visual (SVG/PNG)
-```
+ProyectoWebCarlosVaquero/
+├── index.html               # Estructura principal de la web
+├── style.css                # Estilos (Grid, Flexbox, Animaciones)
+├── script.js                # Interactividad (Formulario API, Carrusel, FAQ)
+├── Readme.md                # Documentación del proyecto
+├── .gitignore               # Exclusiones de Git
+├── legal/                   # Documentos legales y privacidad
+│   ├── aviso-legal.html
+│   ├── politica-cookies.html
+│   └── politica-privacidad.html
+├── img/                     # Renders y fotografías de la construcción
+└── logos/                   # Identidad visual de la marca (SVG/PNG/JPG)
 
 ---
 
