@@ -84,10 +84,10 @@ function pasoPosterior() {
     }
 
     if (pasoActual === 6) {
-        document.getElementById('resumen-nombre').textContent = document.getElementById('nombre').value;
-        document.getElementById('resumen-apellidos').textContent = document.getElementById('apellidos').value;
+        document.getElementById('resumen-nombre').textContent = document.getElementById('firstname').value;
+        document.getElementById('resumen-apellidos').textContent = document.getElementById('lastname').value;
         document.getElementById('resumen-email').textContent = document.getElementById('email').value;
-        document.getElementById('resumen-telefono').textContent = document.getElementById('telefono').value;
+        document.getElementById('resumen-telefono').textContent = document.getElementById('phone').value;
     }
 
     document.getElementById('paso' + pasoActual).classList.remove('activo');
@@ -122,9 +122,9 @@ function actualizarUI() {
 function validarPaso(paso) {
 
     if (paso === 1) {
-        var nombre = document.getElementById('nombre');
+        var nombre = document.getElementById('firstname');
         var email = document.getElementById('email');
-        var telefono = document.getElementById('telefono');
+        var telefono = document.getElementById('phone');
 
         nombre.setCustomValidity('');
         email.setCustomValidity('');
