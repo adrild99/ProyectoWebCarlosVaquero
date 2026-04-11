@@ -38,15 +38,15 @@ function pasoPosterior() {
 
         var datos = {
             fields: [
-                { name: 'firstname', value: document.getElementById('nombre').value },
-                { name: 'lastname', value: document.getElementById('apellidos').value },
+                { name: 'firstname', value: document.getElementById('firstname').value },
+                { name: 'lastname', value: document.getElementById('lastname').value },
                 { name: 'email', value: document.getElementById('email').value },
-                { name: 'phone', value: document.getElementById('telefono').value },
+                { name: 'phone', value: document.getElementById('phone').value },
                 { name: 'estado_proyecto', value: document.querySelector('input[name="estado_proyecto"]:checked')?.value || '' },
                 { name: 'presupuesto', value: document.querySelector('input[name="presupuesto"]:checked')?.value || '' },
                 { name: 'tiempo_inicio', value: document.querySelector('input[name="tiempo_inicio"]:checked')?.value || '' },
                 { name: 'horario_llamada', value: document.querySelector('input[name="horario_llamada"]:checked')?.value || '' },
-                { name: 'city', value: document.getElementById('ciudad').value },
+                { name: 'city', value: document.getElementById('city').value },
             ],
             context: {
                 pageUri: window.location.href,
