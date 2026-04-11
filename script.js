@@ -33,9 +33,9 @@ function pasoPosterior() {
         botonAtras.style.visibility = 'hidden';
 
         // ── ENVÍO A HUBSPOT ──────────────────────────────
-        var portalId = '148240310';
-        var formGuid = '95a411e7-cb1f-4043-b657-dee42f9b5090';
-
+        var portalId = '148238965';
+        var formGuid = '8838d4f3-370d-48f0-9db3-293641204f58';
+        
         var datos = {
             fields: [
                 { name: 'firstname', value: document.getElementById('firstname').value },
