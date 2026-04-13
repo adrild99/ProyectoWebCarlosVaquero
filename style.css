@@ -1,4 +1,4 @@
- /* ── VARIABLES DE MARCA XYLOS HOME ── */
+/* ── VARIABLES DE MARCA XYLOS HOME ── */
  :root {
      --noche: #0E1117;
      --bronce: #c49240;
@@ -482,7 +482,7 @@
 
  /* ── FORMULARIO MULTI-PASO ── */
  .form-wizard {
-     max-width: 560px;
+     max-width: 760px;
      margin: 2rem auto 0;
  }
 
@@ -1082,3 +1082,175 @@
      color: var(--bronce);
      font-weight: 600;
  }
+/* ── AJUSTES DE ESPACIADO ── */
+#intro {
+    padding-bottom: 0rem;
+    overflow: hidden;
+}
+
+.cta-banda {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+}
+
+#contacto {
+    padding-bottom: 2rem;
+}
+
+#faq {
+    padding-top: 2rem;
+}
+
+/* ── CTA BANDAS ── */
+.cta-banda {
+    background: var(--crema);
+    max-width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.cta-banda-oscura {
+    background: var(--noche);
+}
+
+.cta-banda-oscura .cta-banda-texto {
+    color: var(--crema);
+}
+
+.cta-banda-texto {
+    font-family: var(--font-titulo);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--noche);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.cta-banda-btn {
+    display: inline-block;
+    border: 1px solid var(--bronce);
+    color: var(--bronce);
+    padding: 0.7rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cta-banda-btn:hover {
+    background: var(--bronce);
+    color: var(--noche);
+}
+
+.cta-banda-oscura .cta-banda-btn {
+    border-color: var(--bronce);
+    color: var(--bronce);
+}
+
+.cta-banda-oscura .cta-banda-btn:hover {
+    background: var(--bronce);
+    color: var(--noche);
+}
+
+/* ── BOTÓN FLOTANTE ── */
+.btn-flotante {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 52px;
+    height: 52px;
+    background: var(--bronce);
+    color: var(--noche);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-flotante:hover {
+    background: var(--bronce-osc);
+    color: white;
+    transform: scale(1.08);
+}
+
+/* ── CHECKBOX PRIVACIDAD ── */
+.checkbox-privacidad {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--arena);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.label-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.label-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.check-personalizado {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--arena);
+    border-radius: 4px;
+    margin-top: 2px;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.label-checkbox input[type="checkbox"]:checked ~ .check-personalizado {
+    background: var(--bronce);
+    border-color: var(--bronce);
+}
+
+.label-checkbox input[type="checkbox"]:checked ~ .check-personalizado::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.check-texto {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.6;
+}
+
+.check-texto a {
+    color: var(--bronce-osc);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .cta-banda-texto {
+        font-size: 1.3rem;
+    }
+    .btn-flotante {
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+}

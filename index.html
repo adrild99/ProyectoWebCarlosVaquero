@@ -70,9 +70,13 @@
       armonía y valor a largo plazo.</p>
   </section>
 
-  <hr>
+  <!-- CTA BANDA 1 -->
+  <section class="cta-banda">
+    <p class="cta-banda-texto">¿Tienes un terreno o estás pensando en construir?</p>
+    <a href="#contacto" class="cta-banda-btn">Cuéntanos tu proyecto</a>
+  </section>
 
-  <!-- VALORES -->
+  <hr>
   <section id="valores">
     <h2>¿Por qué elegirnos?</h2>
     <div class="grid-3">
@@ -114,7 +118,7 @@
   <!-- GALERÍA -->
   <section id="galeria">
     <h2>Proyectos realizados</h2>
-    <hr>
+  <hr>
     <div class="grid-fotos">
 
       <div class="foto">
@@ -167,9 +171,14 @@
 
     </div>
   </section>
-  <hr>
 
-  <!-- CONTACTO -->
+  <!-- CTA BANDA 2 -->
+  <section class="cta-banda cta-banda-oscura">
+    <p class="cta-banda-texto">Cada proyecto es único. El tuyo también lo será.</p>
+    <a href="#contacto" class="cta-banda-btn">Solicita una llamada gratuita</a>
+  </section>
+
+  <hr>
   <section id="contacto">
     <h2>Hablemos de tu proyecto</h2>
     <p>Cuéntanos sobre ti y tu proyecto. Te llamamos cuando prefieras.</p>
@@ -178,7 +187,7 @@
       <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
       </div>
-      <p class="progress-label" id="progressLabel">Paso 1 de 6</p>
+      <p class="progress-label" id="progressLabel">Paso 1 de 10</p>
 
       <!-- PASO 1: Datos de contacto -->
       <div class="paso activo" id="paso1">
@@ -188,94 +197,178 @@
           <input type="text" id="firstname" name="firstname" placeholder="Nombre" />
           <input type="text" id="lastname" name="lastname" placeholder="Apellidos" />
           <input type="email" id="email" name="email" placeholder="Correo electrónico" required />
-          <input type="tel" id="phone" name="phone" placeholder="Número de teléfono" pattern="/^\+?[0-9]{9,15}$/"
-            required />
+          <input type="tel" id="phone" name="phone" placeholder="Número de teléfono" pattern="/^\+?[0-9]{9,15}$/" required />
         </div>
       </div>
 
-      <!-- PASO 2: Proyecto hecho o no -->
-
+      <!-- PASO 2: Situación del terreno -->
       <div class="paso" id="paso2">
-        <h3 class="paso-titulo centrado">¿Tienes terreno o vas a adquirir uno?</h3>
-
+        <h3 class="paso-titulo centrado">¿En qué situación se encuentra tu terreno?</h3>
         <div class="opciones-grupo">
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">Si</span>
-            <input type="radio" name="estado_proyecto" value="Si" required>
+            <span class="opcion-texto">Terreno urbano listo para construir </span>
+            <input type="radio" name="situacion_terreno" value="Terreno urbano listo para construir" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">Aún No</span>
-            <input type="radio" name="estado_proyecto" value="Aun No" required>
+            <span class="opcion-texto">Terreno urbano pendiente de trámites </span>
+            <input type="radio" name="situacion_terreno" value="Terreno urbano pendiente de trámites" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Terreno rústico </span>
+            <input type="radio" name="situacion_terreno" value="Terreno rústico" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Aún no tengo terreno </span>
+            <input type="radio" name="situacion_terreno" value="Aún no tengo terreno" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">No lo sé / necesito asesoramiento </span>
+            <input type="radio" name="situacion_terreno" value="No lo sé / necesito asesoramiento" required>
             <span class="radio-personalizado"></span>
           </label>
         </div>
       </div>
 
-      <!-- PASO 3: Presupuesto -->
+      <!-- PASO 3: Estado del diseño -->
       <div class="paso" id="paso3">
-
-        <h3 class="paso-titulo centrado">¿Cuánto presupuesto aproximado tienes?</h3>
-
+        <h3 class="paso-titulo centrado">¿En qué punto se encuentra el diseño de tu vivienda? </h3>
+        <p class="paso-subtitulo">Trabajamos tanto con proyectos diseñados desde cero como con ideas o proyectos previos.</p>
         <div class="opciones-grupo">
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">Menos de 200.000€</span>
+            <span class="opcion-texto">Sin proyecto </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Sin proyecto" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Anteproyecto </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Anteproyecto" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Proyecto básico </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Proyecto básico" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Proyecto de ejecución (sin visar o incompleto) </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Proyecto de ejecución sin visar" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Proyecto de ejecución completo y visado </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Proyecto de ejecución completo y visado" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Licencia solicitada </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Licencia solicitada" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Licencia concedida </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Licencia concedida" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Licencia concedida pero pendiente de financiación </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Licencia concedida pendiente de financiación" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Licencia caducada </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Licencia caducada" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Obra iniciada con otro constructor </span>
+            <input type="radio" name="estado_diseno_vivienda" value="Obra iniciada con otro constructor" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- PASO 4: Momento actual del cliente -->
+      <div class="paso" id="paso4">
+        <h3 class="paso-titulo centrado">¿En qué punto te encuentras ahora mismo? </h3>
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Tenemos claro que queremos construir y estamos valorando opciones </span>
+            <input type="radio" name="momento_actual_cliente" value="Valorando opciones" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Nos interesa la vivienda modular y queremos entender bien el proceso </span>
+            <input type="radio" name="momento_actual_cliente" value="Interesado en modular" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Estamos comparando empresas constructoras de casas modulares </span>
+            <input type="radio" name="momento_actual_cliente" value="Comparando empresas" required>
+            <span class="radio-personalizado"></span>
+          </label>
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Solo estamos informándonos por ahora </span>
+            <input type="radio" name="momento_actual_cliente" value="Informándose" required>
+            <span class="radio-personalizado"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- PASO 5: Presupuesto -->
+      <div class="paso" id="paso5">
+        <h3 class="paso-titulo centrado">¿Cuánto presupuesto aproximado tienes? </h3>
+        <div class="opciones-grupo">
+          <label class="opcion-tarjeta">
+            <span class="opcion-texto">Menos de 200.000€ </span>
             <input type="radio" name="presupuesto" value="Menos de 200k" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">de 200.000 a 400.000€</span>
+            <span class="opcion-texto">De 200.000 a 400.000€ </span>
             <input type="radio" name="presupuesto" value="200k - 400k" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">400.000 a 1 Millón de €</span>
+            <span class="opcion-texto">De 400.000€ a 1 millón </span>
             <input type="radio" name="presupuesto" value="400k - 1M" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">1 a 2 millones de €</span>
+            <span class="opcion-texto">De 1 a 2 millones de € </span>
             <input type="radio" name="presupuesto" value="1M - 2M" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">Más de 2M€</span>
+            <span class="opcion-texto">Más de 2 millones de € </span>
             <input type="radio" name="presupuesto" value="Mas de 2M" required>
             <span class="radio-personalizado"></span>
           </label>
         </div>
       </div>
 
-      <!-- PASO 4: Tiempos pautados -->
-
-      <div class="paso" id="paso4">
-
+      <!-- PASO 6: Tiempo de inicio -->
+      <div class="paso" id="paso6">
         <h3 class="paso-titulo centrado">¿Cuándo planeas empezar a construir?</h3>
-
         <div class="opciones-grupo">
           <label class="opcion-tarjeta">
             <span class="opcion-texto">Quiero empezar ya</span>
             <input type="radio" name="tiempo_inicio" value="Quiero empezar" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
             <span class="opcion-texto">De 1 a 6 meses</span>
             <input type="radio" name="tiempo_inicio" value="1 a 6 meses" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
-            <span class="opcion-texto">De 7 a 12 Meses</span>
+            <span class="opcion-texto">De 7 a 12 meses</span>
             <input type="radio" name="tiempo_inicio" value="7 a 12 meses" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
             <span class="opcion-texto">Más de 1 año</span>
             <input type="radio" name="tiempo_inicio" value="Mas de 1 año" required>
@@ -284,25 +377,20 @@
         </div>
       </div>
 
-      <!-- PASO 5: Horarios de llamada -->
-
-      <div class="paso" id="paso5">
-
+      <!-- PASO 7: Horario de llamada -->
+      <div class="paso" id="paso7">
         <h3 class="paso-titulo centrado">¿Cuándo prefieres que te llamemos?</h3>
-
         <div class="opciones-grupo">
           <label class="opcion-tarjeta">
             <span class="opcion-texto">8 a 12h</span>
             <input type="radio" name="horario_llamada" value="Mañana (8-12h)" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
             <span class="opcion-texto">12 a 16h</span>
             <input type="radio" name="horario_llamada" value="Mediodia (12-16h)" required>
             <span class="radio-personalizado"></span>
           </label>
-
           <label class="opcion-tarjeta">
             <span class="opcion-texto">16 a 21h</span>
             <input type="radio" name="horario_llamada" value="Tarde (16-21h)" required>
@@ -311,40 +399,45 @@
         </div>
       </div>
 
-      <!-- PASO 6: Ciudad del proyecto-->
-
-
-      <div class="paso" id="paso6">
+      <!-- PASO 8: Ciudad -->
+      <div class="paso" id="paso8">
         <h3 class="paso-titulo centrado">¿En qué ciudad quieres construir?</h3>
-
         <div class="caja-respuesta">
           <label for="ciudad" class="etiqueta-pequena">Tu respuesta</label>
           <input type="text" id="ciudad" name="city" placeholder="Ej: Toledo" required>
         </div>
       </div>
 
-      <!-- PASO 7: Resumen del proyecto-->
+      <!-- PASO 9: Política de privacidad -->
+      <div class="paso" id="paso9">
+        <h3 class="paso-titulo centrado">Casi hemos terminado</h3>
+        <p class="paso-subtitulo">Para poder contactarte necesitamos tu consentimiento.</p>
+        <div class="checkbox-privacidad">
+          <label class="label-checkbox">
+            <input type="checkbox" id="privacidad" name="politica_privacidad">
+            <span class="check-personalizado"></span>
+            <span class="check-texto">He leído y acepto la <a href="legal/politica-privacidad.html" target="_blank">política de privacidad</a> y consiento el envío de comunicaciones relacionadas con mi proyecto.</span>
+          </label>
+        </div>
+      </div>
 
-      <div class="paso" id="paso7">
-        <h3 class="paso-titulo">Información de contacto ⓘ</h3>
-        <p class="paso-subtitulo">Esta información será usada para contactarte</p>
-
+      <!-- PASO 10: Resumen -->
+      <div class="paso" id="paso10">
+        <h3 class="paso-titulo">Resumen de tu solicitud ⓘ</h3>
+        <p class="paso-subtitulo">Revisa tu información antes de enviar</p>
         <div class="campos-grupo">
           <div class="resumen-tarjeta">
             <span class="resumen-etiqueta">Nombre</span>
             <div class="resumen-valor" id="resumen-nombre">-</div>
           </div>
-
           <div class="resumen-tarjeta">
             <span class="resumen-etiqueta">Apellidos</span>
             <div class="resumen-valor" id="resumen-apellidos">-</div>
           </div>
-
           <div class="resumen-tarjeta">
             <span class="resumen-etiqueta">Correo electrónico</span>
             <div class="resumen-valor" id="resumen-email">-</div>
           </div>
-
           <div class="resumen-tarjeta">
             <span class="resumen-etiqueta">Número de teléfono</span>
             <div class="resumen-valor" id="resumen-telefono">-</div>
@@ -359,9 +452,6 @@
       </div>
     </form>
   </section>
-
-
-  <hr>
 
   <!-- FAQ -->
   <section id="faq">
@@ -389,7 +479,7 @@
     </div>
     <div class="faq-item">
       <h3>¿Trabajáis en toda España?</h3>
-      <p>Sí, llevamos la experiencia Xylos Home a cualquier punto de la península. Nos encargamos de la totalidad del proyecto, garantizando
+      <p>Sí, llevamos la experiencia Xylos Home a cualquier punto de la península. Nos encargamos de todo, garantizando
         que todo el proceso fluya sin complicaciones hasta la
         entrega de las llaves de tu nuevo hogar.</p>
       </p>
@@ -478,7 +568,13 @@
 
   </footer>
 
+  <!-- BOTÓN FLOTANTE TELÉFONO -->
+  <a href="tel:+34610113451" class="btn-flotante" title="Llámanos">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.27 6.27l1.17-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+
   <script src="script.js"></script>
 </body>
-
 </html>

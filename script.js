@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ── FORMULARIO MULTI-PASO ──────────────────────────────
 let pasoActual = 1;
-const totalPasos = 7;
+const totalPasos = 10;
 
 document.addEventListener("DOMContentLoaded", function () {
     actualizarUI();
@@ -33,20 +33,23 @@ function pasoPosterior() {
         botonAtras.style.visibility = 'hidden';
 
         // ── ENVÍO A HUBSPOT ──────────────────────────────
-
         var portalId = '148238965';
         var formGuid = '8838d4f3-370d-48f0-9db3-293641204f58';
+
         var datos = {
             fields: [
                 { name: 'firstname', value: document.getElementById('firstname').value },
                 { name: 'lastname', value: document.getElementById('lastname').value },
                 { name: 'email', value: document.getElementById('email').value },
                 { name: 'phone', value: document.getElementById('phone').value },
-                { name: 'estado_proyecto', value: document.querySelector('input[name="estado_proyecto"]:checked')?.value || '' },
+                { name: 'situacion_terreno', value: document.querySelector('input[name="situacion_terreno"]:checked')?.value || '' },
+                { name: 'estado_diseno_vivienda', value: document.querySelector('input[name="estado_diseno_vivienda"]:checked')?.value || '' },
+                { name: 'momento_actual_cliente', value: document.querySelector('input[name="momento_actual_cliente"]:checked')?.value || '' },
                 { name: 'presupuesto', value: document.querySelector('input[name="presupuesto"]:checked')?.value || '' },
                 { name: 'tiempo_inicio', value: document.querySelector('input[name="tiempo_inicio"]:checked')?.value || '' },
                 { name: 'horario_llamada', value: document.querySelector('input[name="horario_llamada"]:checked')?.value || '' },
                 { name: 'city', value: document.getElementById('ciudad').value },
+                { name: 'politica_privacidad', value: document.getElementById('privacidad').checked ? 'Aceptada' : '' },
             ],
             context: {
                 pageUri: window.location.href,
@@ -83,7 +86,7 @@ function pasoPosterior() {
         return;
     }
 
-    if (pasoActual === 6) {
+    if (pasoActual === 9) {
         document.getElementById('resumen-nombre').textContent = document.getElementById('firstname').value;
         document.getElementById('resumen-apellidos').textContent = document.getElementById('lastname').value;
         document.getElementById('resumen-email').textContent = document.getElementById('email').value;
@@ -154,71 +157,109 @@ function validarPaso(paso) {
     }
 
     if (paso === 2) {
-        var opcionesProyecto = document.getElementsByName('estado_proyecto');
+        var opciones = document.getElementsByName('situacion_terreno');
         var seleccionado = false;
-        for (var i = 0; i < opcionesProyecto.length; i++) {
-            if (opcionesProyecto[i].checked) { seleccionado = true; break; }
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
         }
         if (!seleccionado) {
-            opcionesProyecto[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
-            opcionesProyecto[0].reportValidity();
+            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
+            opciones[0].reportValidity();
             return false;
         } else {
-            opcionesProyecto[0].setCustomValidity('');
+            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 3) {
-        var opcionesPresupuesto = document.getElementsByName('presupuesto');
+        var opciones = document.getElementsByName('estado_diseno_vivienda');
         var seleccionado = false;
-        for (var i = 0; i < opcionesPresupuesto.length; i++) {
-            if (opcionesPresupuesto[i].checked) { seleccionado = true; break; }
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
         }
         if (!seleccionado) {
-            opcionesPresupuesto[0].setCustomValidity('Por favor, selecciona un rango de presupuesto para continuar.');
-            opcionesPresupuesto[0].reportValidity();
+            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
+            opciones[0].reportValidity();
             return false;
         } else {
-            opcionesPresupuesto[0].setCustomValidity('');
+            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 4) {
-        var opcionesTiempo = document.getElementsByName('tiempo_inicio');
+        var opciones = document.getElementsByName('momento_actual_cliente');
         var seleccionado = false;
-        for (var i = 0; i < opcionesTiempo.length; i++) {
-            if (opcionesTiempo[i].checked) { seleccionado = true; break; }
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
         }
         if (!seleccionado) {
-            opcionesTiempo[0].setCustomValidity('Por favor, indícanos cuándo planeas empezar para continuar.');
-            opcionesTiempo[0].reportValidity();
+            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
+            opciones[0].reportValidity();
             return false;
         } else {
-            opcionesTiempo[0].setCustomValidity('');
+            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 5) {
-        var opcionesHorario = document.getElementsByName('horario_llamada');
+        var opciones = document.getElementsByName('presupuesto');
         var seleccionado = false;
-        for (var i = 0; i < opcionesHorario.length; i++) {
-            if (opcionesHorario[i].checked) { seleccionado = true; break; }
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
         }
         if (!seleccionado) {
-            opcionesHorario[0].setCustomValidity('Por favor, dinos a qué hora prefieres que te llamemos.');
-            opcionesHorario[0].reportValidity();
+            opciones[0].setCustomValidity('Por favor, selecciona un rango de presupuesto para continuar.');
+            opciones[0].reportValidity();
             return false;
         } else {
-            opcionesHorario[0].setCustomValidity('');
+            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 6) {
+        var opciones = document.getElementsByName('tiempo_inicio');
+        var seleccionado = false;
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
+        }
+        if (!seleccionado) {
+            opciones[0].setCustomValidity('Por favor, indícanos cuándo planeas empezar para continuar.');
+            opciones[0].reportValidity();
+            return false;
+        } else {
+            opciones[0].setCustomValidity('');
+        }
+    }
+
+    if (paso === 7) {
+        var opciones = document.getElementsByName('horario_llamada');
+        var seleccionado = false;
+        for (var i = 0; i < opciones.length; i++) {
+            if (opciones[i].checked) { seleccionado = true; break; }
+        }
+        if (!seleccionado) {
+            opciones[0].setCustomValidity('Por favor, dinos a qué hora prefieres que te llamemos.');
+            opciones[0].reportValidity();
+            return false;
+        } else {
+            opciones[0].setCustomValidity('');
+        }
+    }
+
+    if (paso === 8) {
         var ciudad = document.getElementById('ciudad');
         ciudad.setCustomValidity('');
         if (!ciudad.value.trim()) {
             ciudad.setCustomValidity('Por favor, indícanos en qué ciudad quieres construir.');
             ciudad.reportValidity();
+            return false;
+        }
+    }
+
+    if (paso === 9) {
+        var privacidad = document.getElementById('privacidad');
+        if (!privacidad.checked) {
+            alert('Debes aceptar la política de privacidad para continuar.');
             return false;
         }
     }
