@@ -43,7 +43,7 @@ function pasoPosterior() {
                 { name: 'email', value: document.getElementById('email').value },
                 { name: 'phone', value: document.getElementById('phone').value },
                 { name: 'situacion_terreno', value: document.querySelector('input[name="situacion_terreno"]:checked')?.value || '' },
-                { name: 'estado_diseno_vivienda', value: document.querySelector('input[name="estado_diseno_vivienda"]:checked')?.value || '' },
+                { name: 'estado_diseno_vivienda', value: document.getElementById('estado_diseno_vivienda')?.value || '' },
                 { name: 'momento_actual_cliente', value: document.querySelector('input[name="momento_actual_cliente"]:checked')?.value || '' },
                 { name: 'presupuesto', value: document.querySelector('input[name="presupuesto"]:checked')?.value || '' },
                 { name: 'tiempo_inicio', value: document.querySelector('input[name="tiempo_inicio"]:checked')?.value || '' },
@@ -184,9 +184,8 @@ function validarPaso(paso) {
     }
 
     if (paso === 3) {
-        var opciones = document.getElementsByName('estado_diseno_vivienda');
-        var seleccionado = Array.from(opciones).some(o => o.checked);
-        if (!seleccionado) {
+        var selectDiseno = document.getElementById('estado_diseno_vivienda');
+        if (!selectDiseno.value) {
             mostrarErrorPaso('Por favor, selecciona una opción para continuar.');
             return false;
         }

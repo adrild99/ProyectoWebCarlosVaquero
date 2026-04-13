@@ -239,57 +239,20 @@
         <p class="paso-subtitulo">Trabajamos tanto con proyectos diseñados desde cero como con ideas o proyectos
           previos.</p>
         <div class="opciones-grupo">
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Sin proyecto </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Sin proyecto">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Anteproyecto </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Anteproyecto">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Proyecto básico </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Proyecto básico">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Proyecto de ejecución (sin visar o incompleto) </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Proyecto de ejecución sin visar">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Proyecto de ejecución completo y visado </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Proyecto de ejecución completo y visado">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Licencia solicitada </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Licencia solicitada">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Licencia concedida </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Licencia concedida">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Licencia concedida pero pendiente de financiación </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Licencia concedida pendiente de financiación"
-              required>
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Licencia caducada </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Licencia caducada">
-            <span class="radio-personalizado"></span>
-          </label>
-          <label class="opcion-tarjeta">
-            <span class="opcion-texto">Obra iniciada con otro constructor </span>
-            <input type="radio" name="estado_diseno_vivienda" value="Obra iniciada con otro constructor">
-            <span class="radio-personalizado"></span>
-          </label>
+          <select id="estado_diseno_vivienda" name="estado_diseno_vivienda" class="select-paso">
+            <option value="" disabled selected>Selecciona una opción...</option>
+            <option value="Sin proyecto">Sin proyecto</option>
+            <option value="Anteproyecto">Anteproyecto</option>
+            <option value="Proyecto básico">Proyecto básico</option>
+            <option value="Proyecto de ejecución sin visar">Proyecto de ejecución (sin visar o incompleto)</option>
+            <option value="Proyecto de ejecución completo y visado">Proyecto de ejecución completo y visado</option>
+            <option value="Licencia solicitada">Licencia solicitada</option>
+            <option value="Licencia concedida">Licencia concedida</option>
+            <option value="Licencia concedida pendiente de financiación">Licencia concedida pero pendiente de
+              financiación</option>
+            <option value="Licencia caducada">Licencia caducada</option>
+            <option value="Obra iniciada con otro constructor">Obra iniciada con otro constructor</option>
+          </select>
         </div>
       </div>
 
