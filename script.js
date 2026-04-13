@@ -122,7 +122,25 @@ function actualizarUI() {
     document.getElementById('btnContinuar').textContent = pasoActual === totalPasos ? 'Enviar' : 'Continuar';
 }
 
+function mostrarErrorPaso(mensaje) {
+    var errorEl = document.getElementById('errorPaso');
+    if (!errorEl) {
+        errorEl = document.createElement('p');
+        errorEl.id = 'errorPaso';
+        errorEl.style.cssText = 'color:#c0392b; font-size:0.85rem; margin-top:0.8rem; font-family:var(--font-ui);';
+        var botones = document.getElementById('wizardBotones');
+        botones.parentNode.insertBefore(errorEl, botones);
+    }
+    errorEl.textContent = mensaje;
+}
+
+function limpiarErrorPaso() {
+    var errorEl = document.getElementById('errorPaso');
+    if (errorEl) errorEl.textContent = '';
+}
+
 function validarPaso(paso) {
+    limpiarErrorPaso();
 
     if (paso === 1) {
         var nombre = document.getElementById('firstname');
@@ -158,91 +176,55 @@ function validarPaso(paso) {
 
     if (paso === 2) {
         var opciones = document.getElementsByName('situacion_terreno');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, selecciona una opción para continuar.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 3) {
         var opciones = document.getElementsByName('estado_diseno_vivienda');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, selecciona una opción para continuar.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 4) {
         var opciones = document.getElementsByName('momento_actual_cliente');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, selecciona una opción para continuar.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, selecciona una opción para continuar.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 5) {
         var opciones = document.getElementsByName('presupuesto');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, selecciona un rango de presupuesto para continuar.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, selecciona un rango de presupuesto para continuar.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 6) {
         var opciones = document.getElementsByName('tiempo_inicio');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, indícanos cuándo planeas empezar para continuar.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, indícanos cuándo planeas empezar para continuar.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
     if (paso === 7) {
         var opciones = document.getElementsByName('horario_llamada');
-        var seleccionado = false;
-        for (var i = 0; i < opciones.length; i++) {
-            if (opciones[i].checked) { seleccionado = true; break; }
-        }
+        var seleccionado = Array.from(opciones).some(o => o.checked);
         if (!seleccionado) {
-            opciones[0].setCustomValidity('Por favor, dinos a qué hora prefieres que te llamemos.');
-            opciones[0].reportValidity();
+            mostrarErrorPaso('Por favor, dinos a qué hora prefieres que te llamemos.');
             return false;
-        } else {
-            opciones[0].setCustomValidity('');
         }
     }
 
