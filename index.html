@@ -116,59 +116,104 @@
 
   <!-- GALERÍA -->
   <section id="galeria">
-    <h2>Proyectos realizados</h2>
-    <hr>
-    <div class="grid-fotos">
-
-      <div class="foto">
-        <img src="img/render1.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Villa Contemporánea</h4>
-          <p>Diseño modular a medida con máxima eficiencia.</p>
-        </div>
-      </div>
-
-      <div class="foto">
-        <img src="img/construccion3.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Proyecto en Sierra</h4>
-          <p>Integración perfecta con el entorno natural.</p>
-        </div>
-      </div>
-
-      <div class="foto">
-        <img src="img/render2.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Residencial Lujo</h4>
-          <p>Acabados premium y espacios abiertos.</p>
-        </div>
-      </div>
-
-      <div class="foto">
-        <img src="img/construccion4.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Montaje Modular</h4>
-          <p>Ejecución rápida y limpia en parcela.</p>
-        </div>
-      </div>
-
-      <div class="foto">
-        <img src="img/renderHero.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Vivienda Unifamiliar</h4>
-          <p>Amplitud y luz natural como protagonistas.</p>
-        </div>
-      </div>
-
-      <div class="foto">
-        <img src="img/construccion1.jpeg" alt="Proyecto Xylos Home">
-        <div class="foto-info">
-          <h4>Estructura Base</h4>
-          <p>Materiales de alta durabilidad y resistencia.</p>
-        </div>
-      </div>
-
+    <div class="galeria-cabecera">
+      <span class="galeria-etiqueta">Nuestro trabajo</span>
+      <h2>Proyectos realizados</h2>
+      <p class="galeria-subtitulo">Cada vivienda es el resultado de escuchar, diseñar y construir sin compromisos.</p>
     </div>
+
+    <!-- CARRUSEL PRINCIPAL -->
+    <div class="carrusel-wrapper" id="carrusel">
+
+      <!-- Diapositivas -->
+      <div class="carrusel-pista" id="carruselPista">
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/render1.jpeg" alt="Villa Contemporánea">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">01</span>
+            <h3 class="ficha-titulo">Villa Contemporánea</h3>
+            <p class="ficha-descripcion">Diseño modular a medida con máxima eficiencia energética. Cada espacio pensado para quien lo habita.</p>
+            <span class="ficha-tag">Vivienda unifamiliar</span>
+          </div>
+        </div>
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/construccion3.jpeg" alt="Proyecto en Sierra">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">02</span>
+            <h3 class="ficha-titulo">Proyecto en Sierra</h3>
+            <p class="ficha-descripcion">Integración perfecta con el entorno natural, respetando la topografía y maximizando las vistas.</p>
+            <span class="ficha-tag">Entorno natural</span>
+          </div>
+        </div>
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/render2.jpeg" alt="Residencial Lujo">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">03</span>
+            <h3 class="ficha-titulo">Residencial Lujo</h3>
+            <p class="ficha-descripcion">Acabados premium y espacios abiertos que convierten cada estancia en una experiencia.</p>
+            <span class="ficha-tag">Premium</span>
+          </div>
+        </div>
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/construccion4.jpeg" alt="Montaje Modular">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">04</span>
+            <h3 class="ficha-titulo">Montaje Modular</h3>
+            <p class="ficha-descripcion">Ejecución rápida y limpia en parcela. Del proyecto a la entrega en plazos cerrados por contrato.</p>
+            <span class="ficha-tag">Proceso constructivo</span>
+          </div>
+        </div>
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/renderHero.jpeg" alt="Vivienda Unifamiliar">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">05</span>
+            <h3 class="ficha-titulo">Vivienda Unifamiliar</h3>
+            <p class="ficha-descripcion">Amplitud y luz natural como protagonistas. Arquitectura que respira y conecta interior con exterior.</p>
+            <span class="ficha-tag">Diseño abierto</span>
+          </div>
+        </div>
+
+        <div class="carrusel-slide">
+          <div class="carrusel-imagen">
+            <img src="img/construccion1.jpeg" alt="Estructura Base">
+          </div>
+          <div class="carrusel-ficha">
+            <span class="ficha-numero">06</span>
+            <h3 class="ficha-titulo">Estructura Base</h3>
+            <p class="ficha-descripcion">Materiales de alta durabilidad y resistencia certificados bajo norma EN 14080, con Marcado CE.</p>
+            <span class="ficha-tag">Ingeniería</span>
+          </div>
+        </div>
+
+      </div><!-- /carrusel-pista -->
+
+      <!-- Controles -->
+      <button class="carrusel-btn carrusel-btn--prev" id="btnPrev" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carrusel-btn carrusel-btn--next" id="btnNext" aria-label="Siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <!-- Puntos indicadores -->
+      <div class="carrusel-puntos" id="carruselPuntos"></div>
+
+    </div><!-- /carrusel-wrapper -->
   </section>
 
   <!-- CTA BANDA 2 -->

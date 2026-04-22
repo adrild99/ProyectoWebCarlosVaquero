@@ -288,3 +288,56 @@ document.addEventListener("DOMContentLoaded", function () {
         bannerCookies.classList.add('oculto');
     });
 });
+
+// ── CARRUSEL DE GALERÍA ──────────────────────────────
+document.addEventListener("DOMContentLoaded", function () {
+    const pista = document.getElementById('carruselPista');
+    const contenedorPuntos = document.getElementById('carruselPuntos');
+    if (!pista || !contenedorPuntos) return;
+
+    const slides = pista.querySelectorAll('.carrusel-slide');
+    const total = slides.length;
+    let indice = 0;
+    let intervaloAuto;
+
+    // Generar puntos indicadores
+    slides.forEach((_, i) => {
+        const punto = document.createElement('button');
+        punto.classList.add('carrusel-punto');
+        punto.setAttribute('aria-label', 'Ir al proyecto ' + (i + 1));
+        if (i === 0) punto.classList.add('activo');
+        punto.addEventListener('click', () => { irA(i); reiniciarAuto(); });
+        contenedorPuntos.appendChild(punto);
+    });
+
+    function irA(nuevoIndice) {
+        indice = (nuevoIndice + total) % total;
+        pista.style.transform = 'translateX(-' + (indice * 100) + '%)';
+        contenedorPuntos.querySelectorAll('.carrusel-punto').forEach((p, i) => {
+            p.classList.toggle('activo', i === indice);
+        });
+    }
+
+    document.getElementById('btnNext').addEventListener('click', () => { irA(indice + 1); reiniciarAuto(); });
+    document.getElementById('btnPrev').addEventListener('click', () => { irA(indice - 1); reiniciarAuto(); });
+
+    function iniciarAuto() {
+        intervaloAuto = setInterval(() => irA(indice + 1), 5000);
+    }
+    function reiniciarAuto() {
+        clearInterval(intervaloAuto);
+        iniciarAuto();
+    }
+
+    // Swipe táctil
+    let xInicio = null;
+    pista.addEventListener('touchstart', e => { xInicio = e.touches[0].clientX; }, { passive: true });
+    pista.addEventListener('touchend', e => {
+        if (xInicio === null) return;
+        const diff = xInicio - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { irA(diff > 0 ? indice + 1 : indice - 1); reiniciarAuto(); }
+        xInicio = null;
+    });
+
+    iniciarAuto();
+});
