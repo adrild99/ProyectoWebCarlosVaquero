@@ -1,0 +1,63 @@
+.cta-banda {
+    background: var(--crema);
+    max-width: 100%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.cta-banda-oscura {
+    background: var(--noche);
+}
+
+.cta-banda-oscura .cta-banda-texto {
+    color: var(--crema);
+}
+
+.cta-banda-texto {
+    font-family: var(--font-titulo);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--noche);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.cta-banda-btn {
+    display: inline-block;
+    border: 1px solid var(--bronce);
+    color: var(--bronce);
+    padding: 0.7rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+}
+
+.cta-banda-btn:hover {
+    background: var(--bronce);
+    color: var(--noche);
+}
+
+.cta-banda-oscura .cta-banda-btn {
+    border-color: var(--bronce);
+    color: var(--bronce);
+}
+
+.cta-banda-oscura .cta-banda-btn:hover {
+    background: var(--bronce);
+    color: var(--noche);
+}
+
+@media (max-width: 768px) {
+    .cta-banda-texto {
+        font-size: 1.3rem;
+    }
+}

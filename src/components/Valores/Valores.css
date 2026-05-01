@@ -1,0 +1,29 @@
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    border: 1px solid var(--arena);
+    border-radius: 8px;
+    padding: 1.8rem;
+    background: #fff;
+}
+
+.card h3 {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bronce-osc);
+    margin-bottom: 0.8rem;
+}
+
+@media (max-width: 616px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}

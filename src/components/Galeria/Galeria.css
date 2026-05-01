@@ -1,0 +1,231 @@
+/* ── GALERÍA / CARRUSEL ── */
+#galeria {
+  background: var(--noche);
+  max-width: 100%;
+  padding: 5rem 0 4rem;
+}
+
+.galeria-cabecera {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.galeria-etiqueta {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bronce);
+  margin-bottom: 0.8rem;
+}
+
+#galeria h2 {
+  color: var(--crema);
+  font-size: 2.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.galeria-subtitulo {
+  color: var(--gris-calido);
+  font-size: 0.95rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── CARRUSEL WRAPPER ── */
+.carrusel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.carrusel-pista {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── SLIDE ── */
+.carrusel-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--pizarra);
+}
+
+.carrusel-imagen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.carrusel-slide:hover .carrusel-imagen img {
+  transform: scale(1.04);
+}
+
+.carrusel-imagen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(14, 17, 23, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── FICHA LATERAL ── */
+.carrusel-ficha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 2.2rem;
+  background: var(--pizarra);
+  border-left: 1px solid rgba(196, 146, 64, 0.15);
+  position: relative;
+}
+
+.carrusel-ficha::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--bronce), transparent);
+}
+
+.ficha-numero {
+  font-family: var(--font-titulo);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: rgba(196, 146, 64, 0.2);
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.ficha-titulo {
+  font-family: var(--font-titulo);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--crema);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.ficha-descripcion {
+  color: var(--gris-calido);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.ficha-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bronce);
+  border: 1px solid rgba(196, 146, 64, 0.4);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+/* ── BOTONES DE NAVEGACIÓN ── */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(14, 17, 23, 0.7);
+  border: 1px solid rgba(196, 146, 64, 0.3);
+  color: var(--bronce);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  backdrop-filter: blur(4px);
+}
+
+.carrusel-btn:hover {
+  background: var(--bronce);
+  border-color: var(--bronce);
+  color: var(--noche);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-btn--prev { left: 2.4rem; }
+.carrusel-btn--next { right: 2.4rem; }
+
+/* ── PUNTOS INDICADORES ── */
+.carrusel-puntos {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+}
+
+.carrusel-punto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(196, 146, 64, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, width 0.3s;
+  padding: 0;
+}
+
+.carrusel-punto.activo {
+  background: var(--bronce);
+  width: 22px;
+  border-radius: 3px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+  .carrusel-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .carrusel-imagen {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carrusel-ficha {
+    padding: 1.6rem 1.4rem;
+    border-left: none;
+    border-top: 1px solid rgba(196, 146, 64, 0.15);
+  }
+
+  .carrusel-ficha::before { display: none; }
+  .ficha-numero { font-size: 2.5rem; }
+  .carrusel-btn--prev { left: 0.6rem; }
+  .carrusel-btn--next { right: 0.6rem; }
+  #galeria h2 { font-size: 2rem; }
+}

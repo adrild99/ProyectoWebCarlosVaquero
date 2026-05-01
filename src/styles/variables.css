@@ -1,0 +1,14 @@
+/* ── VARIABLES DE MARCA XYLOS HOME ── */
+:root {
+    --noche: #0E1117;
+    --bronce: #c49240;
+    --bronce-osc: #8B6520;
+    --crema: #F7F3ED;
+    --arena: #E8DCC8;
+    --gris-calido: #6B6560;
+    --pizarra: #1E2330;
+
+    --font-titulo: 'Cormorant Garamond', Georgia, serif;
+    --font-ui: 'Montserrat', sans-serif;
+    --font-cuerpo: 'Inter', sans-serif;
+}

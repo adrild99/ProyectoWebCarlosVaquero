@@ -1,0 +1,357 @@
+#contacto {
+    padding-bottom: 2rem;
+}
+
+.form-wizard {
+    max-width: 760px;
+    margin: 2rem auto 0;
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--arena);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--bronce);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+    width: 0%;
+}
+
+.progress-label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--gris-calido);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.paso {
+    display: none;
+}
+
+.paso.activo {
+    display: block;
+}
+
+.paso-titulo {
+    font-family: var(--font-titulo);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--noche);
+    margin-bottom: 0.4rem;
+}
+
+.paso-subtitulo {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    margin-bottom: 1.5rem;
+}
+
+.campos-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.campos-grupo input {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--arena);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: var(--font-cuerpo);
+    color: var(--noche);
+    background: white;
+    width: 100%;
+}
+
+.campos-grupo input:focus {
+    outline: none;
+    border-color: var(--bronce);
+}
+
+.wizard-botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-atras {
+    background: transparent;
+    color: var(--gris-calido);
+    border: 1px solid var(--arena);
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.btn-atras:hover {
+    border-color: var(--bronce-osc);
+    color: var(--noche);
+}
+
+.btn-continuar {
+    flex: 1;
+    background: var(--noche);
+    color: white;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-continuar:hover {
+    background: var(--bronce);
+    color: var(--noche);
+}
+
+.opciones-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcion-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    border: 1px solid #dcdcdc;
+    border-radius: 30px;
+    background-color: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.opcion-tarjeta:hover {
+    border-color: #a0a0a0;
+    background-color: #f0f0f0;
+}
+
+.opcion-texto {
+    font-size: 16px;
+    color: #333;
+}
+
+.opcion-tarjeta input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 50%;
+    left: 20px;
+}
+
+.radio-personalizado {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.radio-personalizado::after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.opcion-tarjeta input[type="radio"]:checked ~ .radio-personalizado {
+    border-color: black;
+}
+
+.opcion-tarjeta input[type="radio"]:checked ~ .radio-personalizado::after {
+    display: block;
+}
+
+.opcion-tarjeta:has(input[type="radio"]:checked) {
+    border-color: black;
+    background-color: #f9f9f9;
+}
+
+.select-paso {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    color: var(--noche);
+    background-color: #fff;
+    border: 1.5px solid var(--arena);
+    border-radius: 0.6rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C49240' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.select-paso:focus {
+    outline: none;
+    border-color: var(--bronce);
+}
+
+.select-paso option[value=""][disabled] {
+    color: var(--gris-calido);
+}
+
+.caja-respuesta {
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.etiqueta-pequena {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.caja-respuesta input[type="text"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #000;
+    background: transparent;
+}
+
+.checkbox-privacidad {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--arena);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.label-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.label-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.check-personalizado {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--arena);
+    border-radius: 4px;
+    margin-top: 2px;
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.label-checkbox input[type="checkbox"]:checked ~ .check-personalizado {
+    background: var(--bronce);
+    border-color: var(--bronce);
+}
+
+.label-checkbox input[type="checkbox"]:checked ~ .check-personalizado::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.check-texto {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.6;
+}
+
+.check-texto a {
+    color: var(--bronce-osc);
+    text-decoration: underline;
+}
+
+.resumen-tarjeta {
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+}
+
+.resumen-etiqueta {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.resumen-valor {
+    font-size: 16px;
+    color: #111;
+    min-height: 20px;
+}
+
+.centrado {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.error-paso {
+    color: #c0392b;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+    font-family: var(--font-ui);
+}
+
+.exito-envio {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.exito-envio h2 {
+    margin-bottom: 15px;
+}
+
+.exito-envio p {
+    font-size: 18px;
+    color: #555;
+}
+
+@media (max-width: 616px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+}
