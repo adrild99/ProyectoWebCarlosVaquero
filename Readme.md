@@ -1,52 +1,68 @@
-# Proyecto Web — Carlos
+# XylosHome
 
 [Ver web en vivo](https://xyloshome.pages.dev)
 
-Landing page profesional desarrollada en HTML, CSS y JavaScript puro. Sin frameworks ni dependencias externas.
+Web corporativa de **Xylos** — vitrina estática con identidad de marca,
+servicios y páginas legales. Migrada de HTML/CSS/JS a React 19 + Vite 8.
 
 ---
 
-## Estructura del proyecto
+## Stack
+
+| Capa | Tecnología |
+|------|-----------|
+| Framework UI | React 19 |
+| Bundler | Vite 8 (Rolldown) |
+| Routing | React Router 7 |
+| Lenguaje | TypeScript 5.7 |
+| Despliegue | Cloudflare Pages |
+
+---
+
+## Estructura
 
 ```
-ProyectoWebCarlosVaquero/
-├── index.html               # Estructura principal de la web
-├── style.css                # Estilos (Grid, Flexbox, Animaciones)
-├── script.js                # Interactividad (Formulario API, Carrusel, FAQ)
-├── Readme.md                # Documentación del proyecto
-├── .gitignore               # Exclusiones de Git
-├── legal/                   # Documentos legales y privacidad
-│   ├── aviso-legal.html
-│   ├── politica-cookies.html
-│   └── politica-privacidad.html
-├── img/                     # Renders y fotografías de la construcción
-└── logos/                   # Identidad visual de la marca (SVG/PNG/JPG)
+src/
+  components/         ← Componentes reutilizables (Header, Footer, etc.)
+  pages/
+    Home.tsx          ← Página principal
+    AvisoLegal.tsx
+    PoliticaPrivacidad.tsx
+    PoliticaCookies.tsx
+  styles/             ← Estilos globales y variables CSS
+public/               ← Assets estáticos (imágenes, logos)
+```
 
 ---
 
-## Secciones de la web
+## Variables de entorno
 
-| Sección | ID | Descripción |
-|---|---|---|
-| Navegación | `nav` | Menú flotante fijo en la parte superior |
-| Hero | `#hero` | Portada con título principal y botón de contacto |
-| Quiénes somos | `#intro` | Presentación de la empresa |
-| Servicios | `#valores` | Tarjetas con los puntos clave del negocio |
-| Proyectos | `#galeria` | Grid de fotos de trabajos realizados |
-| Contacto | `#contacto` | Formulario de contacto con campos personalizados |
-| FAQ | `#faq` | Preguntas frecuentes |
-| Footer | `footer` | Datos de contacto y enlaces legales |
+Este proyecto no utiliza variables de entorno — no hay llamadas a APIs externas
+ni servicios de terceros que requieran claves.
 
 ---
 
-## Tecnologías utilizadas
+## Instalación y desarrollo
 
-- **HTML5** — estructura de la página
-- **CSS3** — estilos y layout (Grid, Flexbox)
-- **JavaScript** — utilizado para validación de formulario, acordeon FaQ y carrusel Hero.
-- **Formspree** — envío del formulario por email (pendiente de integrar)
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # Compila TypeScript y genera /dist
+npm run preview   # Preview del build en local
+```
 
-Todo funciona abriendo `index.html` directamente en el navegador. No necesita servidor ni instalación.
+---
+
+## Despliegue
+
+El proyecto se despliega automáticamente en **Cloudflare Pages** desde `main`.
+La rama `develop` es de integración — no se despliega automáticamente.
+
+```
+main      ← producción (Cloudflare Pages → xyloshome.pages.dev)
+  └── develop ← integración
+        └── feature/* / fix/* / chore/*
+```
 
 ---
 
@@ -56,7 +72,4 @@ Todo funciona abriendo `index.html` directamente en el navegador. No necesita se
 
 ---
 
-## Contacto del proyecto
-
-Desarrollado por **Adrián Lozano**  
-Inicio: Marzo 2026
+*Desarrollado por Katan Studio para Xylos. Inicio: Marzo 2026.*
