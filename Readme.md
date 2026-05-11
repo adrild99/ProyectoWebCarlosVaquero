@@ -1,6 +1,6 @@
 # XylosHome
 
-[Ver web en vivo](https://xyloshome.pages.dev)
+[Ver web en vivo](https://xyloshome.com)
 
 Web corporativa de **Xylos** — vitrina estática con identidad de marca,
 servicios y páginas legales. Migrada de HTML/CSS/JS a React 19 + Vite 8.
@@ -15,7 +15,6 @@ servicios y páginas legales. Migrada de HTML/CSS/JS a React 19 + Vite 8.
 | Bundler | Vite 8 (Rolldown) |
 | Routing | React Router 7 |
 | Lenguaje | TypeScript 5.7 |
-| Despliegue | Cloudflare Pages |
 
 ---
 
@@ -46,7 +45,7 @@ ni servicios de terceros que requieran claves.
 
 ```bash
 npm install
-npm run dev       # http://localhost:5173
+npm run dev      
 npm run build     # Compila TypeScript y genera /dist
 npm run preview   # Preview del build en local
 ```
@@ -55,21 +54,18 @@ npm run preview   # Preview del build en local
 
 ## Despliegue
 
-El proyecto se despliega automáticamente en **Cloudflare Pages** desde `main`.
-La rama `develop` es de integración — no se despliega automáticamente.
+El proyecto se sirve desde el servidor **Hetzner** (Nuremberg).
+El build de producción se genera con `npm run build` y el contenido de `/dist` se publica en el servidor.
+
+- Dominio principal: [xyloshome.com](https://xyloshome.com)
+- Dominio alternativo: [xyloshome.es](https://xyloshome.es)
 
 ```
-main      ← producción (Cloudflare Pages → xyloshome.pages.dev)
+main      ← producción (Hetzner → xyloshome.com / xyloshome.es)
   └── develop ← integración
         └── feature/* / fix/* / chore/*
 ```
 
 ---
 
-## Pendiente
-
-- [ ] Configurar dominio definitivo (.com / .es)
-
----
-
-*Desarrollado por Katan Studio para Xylos. Inicio: Marzo 2026.*
+*Desarrollado por Katan para Xylos. Inicio: Marzo 2026.*
