@@ -1,3 +1,36 @@
 node_modules/
 dist/
 *.bak
+
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Vite
+.vite/
+
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Herramientas de IA
+.claude/settings.local.json
+.claude/memory/
+.cursor/
+.aider/
+.aider.tags.cache.v3/
+.aider.chat.history.md
+.copilot/
+.continue/
+.codeium/
+.windsurf/
+.tabnine/
