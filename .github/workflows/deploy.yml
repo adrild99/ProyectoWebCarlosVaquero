@@ -1,0 +1,50 @@
+name: Deploy a producción
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  frontend-build:
+    name: Build de frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+  deploy:
+    name: Despliegue en Hetzner
+    runs-on: ubuntu-latest
+    needs: [frontend-build]
+
+    steps:
+      - name: Deploy vía SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host:     ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key:      ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+
+            cd /var/www/${{ secrets.PROJECT_NAME }}
+            git pull origin main
+
+            pnpm install --frozen-lockfile
+            pnpm run build
