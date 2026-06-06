@@ -144,8 +144,8 @@ export default function Contacto() {
   function submitForm() {
     setSubmitting(true)
 
-    const portalId = '148238965'
-    const formGuid = '8838d4f3-370d-48f0-9db3-293641204f58'
+    const portalId = '148240310'
+    const formGuid = '95a411e7-cb1f-4043-b657-dee42f9b5090'
 
     const datos = {
       fields: [
@@ -316,8 +316,8 @@ export default function Contacto() {
           <div className="opciones-grupo">
             {[
               { label: 'Tenemos claro que queremos construir y estamos valorando opciones ', value: 'Valorando opciones' },
-              { label: 'Nos interesa la vivienda modular y queremos entender bien el proceso ', value: 'Interesado en modular' },
-              { label: 'Estamos comparando empresas constructoras de casas modulares ', value: 'Comparando empresas' },
+              { label: 'Nos interesa construir y queremos entender bien el proceso ', value: 'Interesado en construir' },
+              { label: 'Estamos comparando empresas constructoras ', value: 'Comparando empresas' },
               { label: 'Solo estamos informándonos por ahora ', value: 'Informándose' },
             ].map(opcion => (
               <label className="opcion-tarjeta" key={opcion.value}>
